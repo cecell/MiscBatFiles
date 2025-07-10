@@ -1,4 +1,4 @@
-#log_error_filter.bat
+# log_error_filter.bat
   - Set the following options at the top of the script
     - Whether to automatically open the output file or not
       - `set AUTO_OPEN=1`
@@ -10,7 +10,7 @@
       - Drag-and-drop log file onto this script.
   
   - Search tokens are to the right of this: 
-    - >> "%ps_script%" echo $patterns = 
+    - \>\> "%ps_script%" echo $patterns = 
   
   - Each search token must be inside pipes "|" and pipes must be escaped using "^" so "^|":
     - |new_one^|
