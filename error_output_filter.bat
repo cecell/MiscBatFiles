@@ -1,129 +1,35 @@
 @echo off
-setlocal enabledelayedexpansion
 
+:: AUTO_OPEN: Set to 1 to automatically open output file in default text editor
+set AUTO_OPEN=1
+
+REM Drag-and-drop log file onto this script. Patterns are hardcoded in this file.
 if "%~1"=="" (
-    echo Usage: Drag and drop a log file onto this script
-    echo Output will be saved as [filename]_filtered.txt
+    echo Drag and drop a log file onto this script.
     pause
     exit /b 1
 )
+set "infile=%~1"
+set "outfile=%~dpn1_filtered.txt"
 
-set "input_file=%~1"
+echo Filtering errors from: %infile%
+echo Output will be saved to: %outfile%
 
-set "output_file=%~dpn1_filtered.txt"
+REM Patterns: adjust as needed (case-insensitive, | = OR)
+set "patterns=error|failed|fatal|exception|traceback|lnk|undefined reference|unresolved external|compilation terminated|collect2: error|ld returned|ninja: build stopped|make: \*\*\*|cmake error|msbuild failed|subprocess-exited-with-error|building editable|failed building|failed to build|incompatible|requires.*but you have|version conflict|modulenotfounderror|importerror|syntaxerror|runtimeerror|attributeerror|typeerror|valueerror|keyerror|indexerror|cuda error|gpu error|not compatible|out of memory|device-side assert|cudnn error|cublas error|sm_|package.*not found|could not find|missing|not installed|permission denied|access denied|disk space|invalid|unsupported|abort|terminated|killed|crash|exit code|file not found|directory not found|linker error|compiler error|deprecated|obsolete"
 
-echo Filtering errors from: %~nx1
-echo Output will be saved to: %~nx1_filtered.txt
-
-:: Initialize line counter
-set /a line_num=0
-
-:: Clear output file if it exists
-if exist "%output_file%" del "%output_file%"
 > "%output_file%" echo Error Log Filter - Generated on %date% %time%
 >> "%output_file%" echo Original file: %~nx1
 >> "%output_file%" echo.
 
-for /f "usebackq delims=" %%a in ("%input_file%") do (
-    set /a line_num+=1
-    set "line=%%a"
-    
-    :: Check for error patterns (case insensitive using findstr /i)
-    set "is_error=0"
-    
-    :: Critical errors
-    echo !line! | findstr /i /c:"error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"failed" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"fatal" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"exception" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"traceback" >nul && set "is_error=1"
-    
-    :: Build system errors
-    echo !line! | findstr /i /c:"lnk" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"undefined reference" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"unresolved external" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"compilation terminated" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"collect2: error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"ld returned" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"ninja: build stopped" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"make: ***" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"cmake error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"msbuild failed" >nul && set "is_error=1"
-    
-    :: Python/pip errors
-    echo !line! | findstr /i /c:"subprocess-exited-with-error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"building editable" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"failed building" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"failed to build" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"incompatible" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"requires.*but you have" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"version conflict" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"modulenotfounderror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"importerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"syntaxerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"runtimeerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"attributeerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"typeerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"valueerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"keyerror" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"indexerror" >nul && set "is_error=1"
-    
-    :: CUDA/GPU specific errors
-    echo !line! | findstr /i /c:"cuda error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"gpu error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"not compatible" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"out of memory" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"device-side assert" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"cudnn error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"cublas error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"sm_" >nul && set "is_error=1"
-    
-    :: Package/dependency issues
-    echo !line! | findstr /i /c:"package.*not found" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"could not find" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"missing" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"not installed" >nul && set "is_error=1"
-    
-    :: Memory/resource errors
-    echo !line! | findstr /i /c:"permission denied" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"access denied" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"disk space" >nul && set "is_error=1"
-    
-    :: Configuration errors
-    echo !line! | findstr /i /c:"invalid" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"unsupported" >nul && set "is_error=1"
-    
-    :: Generic critical patterns
-    echo !line! | findstr /i /c:"abort" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"terminated" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"killed" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"crash" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"exit code" >nul && set "is_error=1"
-    
-    :: File system errors
-    echo !line! | findstr /i /c:"file not found" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"directory not found" >nul && set "is_error=1"
-    
-    :: Compilation specific
-    echo !line! | findstr /i /c:"linker error" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"compiler error" >nul && set "is_error=1"
-    
-    :: Important warnings
-    echo !line! | findstr /i /c:"deprecated" >nul && set "is_error=1"
-    echo !line! | findstr /i /c:"obsolete" >nul && set "is_error=1"
-    
-    :: If this line matches any pattern, write it to output
-    if "!is_error!"=="1" (
-        echo ^<^|!line_num!^|^> !line! >> "%output_file%"
-    )
-)
+REM Call PowerShell with stats logic
+powershell -NoLogo -Command ^
+    "$num_lines = 0; $num_err = 0; " ^
+    "Get-Content -Path '%infile%' | ForEach-Object { $num_lines++; if ($_ -match '%patterns%') { $num_err++; Write-Output ('<|{0}|> {1}' -f $num_lines, $_) } } | Set-Content -Path '%outfile%'; " ^
+    "Write-Host ('Total lines processed: {0}' -f $num_lines); " ^
+    "Write-Host ('Total lines matched: {0}' -f $num_err); " ^
+    "Write-Host 'Output written to: %outfile%'; "
 
-echo.
-echo Filtering complete!
-echo Total lines processed: !line_num!
-echo Output saved to: %output_file%
-echo.
-echo Opening filtered file...
-start notepad "%output_file%"
 
+if %AUTO_OPEN%==1 start "" "%outfile%"
 pause
