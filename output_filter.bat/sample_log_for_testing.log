@@ -1,0 +1,1015 @@
+=== Step 1: Uninstalling existing PyTorch ===
+Found existing installation: torch 2.5.1+cu121
+Uninstalling torch-2.5.1+cu121:
+  Successfully uninstalled torch-2.5.1+cu121
+WARNING: Failed to remove contents in a temporary directory 'venv\Lib\site-packages\~orch'.
+You can safely remove it manually.
+Found existing installation: torchvision 0.20.1+cu121
+Uninstalling torchvision-0.20.1+cu121:
+  Successfully uninstalled torchvision-0.20.1+cu121
+WARNING: Failed to remove contents in a temporary directory 'venv\Lib\site-packages\~orchvision'.
+You can safely remove it manually.
+Found existing installation: torchaudio 2.5.1+cu121
+Uninstalling torchaudio-2.5.1+cu121:
+  Successfully uninstalled torchaudio-2.5.1+cu121
+
+=== Step 2: Installing custom PyTorch build ===
+Obtaining file:///C:/AI/pytorch
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Collecting filelock (from torch==2.9.0a0+giteffe376)
+  Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting typing-extensions>=4.10.0 (from torch==2.9.0a0+giteffe376)
+  Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy>=1.13.3 (from torch==2.9.0a0+giteffe376)
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch==2.9.0a0+giteffe376)
+  Using cached networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch==2.9.0a0+giteffe376)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch==2.9.0a0+giteffe376)
+  Using cached fsspec-2025.5.1-py3-none-any.whl.metadata (11 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.0a0+giteffe376)
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.0a0+giteffe376)
+  Using cached MarkupSafe-3.0.2-cp311-cp311-win_amd64.whl.metadata (4.1 kB)
+Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+Using cached filelock-3.18.0-py3-none-any.whl (16 kB)
+Using cached fsspec-2025.5.1-py3-none-any.whl (199 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached MarkupSafe-3.0.2-cp311-cp311-win_amd64.whl (15 kB)
+Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
+Building wheels for collected packages: torch
+  Building editable for torch (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+
+  × Building editable for torch (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [846 lines of output]
+      Building wheel torch-2.9.0a0+giteffe376
+      -- Building version 2.9.0a0+giteffe376
+      \AppData\Local\Temp\pip-build-env-siuo11nz\overlay\Lib\site-packages\setuptools\_distutils\_msvccompiler.py:12: UserWarning: _get_vc_env is private; find an alternative (pypa/distutils#340)
+        warnings.warn(
+      cmake --build . --target install --config Release
+      [1/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\SparseMM.cu.obj
+      SparseMM.cu
+      tmpxft_00007f64_00000000-7_SparseMM.cudafe1.cpp
+      [2/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\SpectralOps.cu.obj
+      SpectralOps.cu
+      tmpxft_00007e1c_00000000-7_SpectralOps.cudafe1.cpp
+      [3/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGammaKernels.cu.obj
+      UnaryGammaKernels.cu
+      tmpxft_0000817c_00000000-7_UnaryGammaKernels.cudafe1.cpp
+
+      [4/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryComplexKernels.cu.obj
+      UnaryComplexKernels.cu
+
+      tmpxft_000080e0_00000000-7_UnaryComplexKernels.cudafe1.cpp
+
+      [5/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricAtanKernel.cu.obj
+      UnaryGeometricAtanKernel.cu
+
+      tmpxft_00008378_00000000-7_UnaryGeometricAtanKernel.cudafe1.cpp
+
+      [6/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricCoshKernel.cu.obj
+      UnaryGeometricCoshKernel.cu
+      tmpxft_00007e78_00000000-7_UnaryGeometricCoshKernel.cudafe1.cpp
+      [7/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricSinhKernel.cu.obj
+      UnaryGeometricSinhKernel.cu
+      tmpxft_0000822c_00000000-7_UnaryGeometricSinhKernel.cudafe1.cpp
+      [8/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorTransformations.cu.obj
+      TensorTransformations.cu
+
+      tmpxft_00008008_00000000-7_TensorTransformations.cudafe1.cpp
+
+      [9/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricTanhKernel.cu.obj
+      UnaryGeometricTanhKernel.cu
+
+      tmpxft_000083d8_00000000-7_UnaryGeometricTanhKernel.cudafe1.cpp
+
+      [10/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorShape.cu.obj
+      TensorShape.cu
+
+      tmpxft_00007bd8_00000000-7_TensorShape.cudafe1.cpp
+
+      [11/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricAtanhKernel.cu.obj
+      UnaryGeometricAtanhKernel.cu
+      tmpxft_000083cc_00000000-7_UnaryGeometricAtanhKernel.cudafe1.cpp
+      [12/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricSinKernel.cu.obj
+      UnaryGeometricSinKernel.cu
+      tmpxft_00008160_00000000-7_UnaryGeometricSinKernel.cudafe1.cpp
+      [13/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricTanKernel.cu.obj
+      UnaryGeometricTanKernel.cu
+
+      tmpxft_00008254_00000000-7_UnaryGeometricTanKernel.cudafe1.cpp
+
+      [14/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricCosKernel.cu.obj
+      UnaryGeometricCosKernel.cu
+
+      tmpxft_00007e3c_00000000-7_UnaryGeometricCosKernel.cudafe1.cpp
+
+      [15/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\SummaryOps.cu.obj
+      SummaryOps.cu
+
+      tmpxft_00007e40_00000000-7_SummaryOps.cudafe1.cpp
+
+      [16/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleBicubic2d.cu.obj
+      UpSampleBicubic2d.cu
+      tmpxft_000086c8_00000000-7_UpSampleBicubic2d.cudafe1.cpp
+      [17/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TriangularOps.cu.obj
+      TriangularOps.cu
+      tmpxft_00008070_00000000-7_TriangularOps.cudafe1.cpp
+      [18/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnfoldBackwardKernel.cu.obj
+      UnfoldBackwardKernel.cu
+      tmpxft_000084e8_00000000-7_UnfoldBackwardKernel.cudafe1.cpp
+
+      [19/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleLinear1d.cu.obj
+      UpSampleLinear1d.cu
+
+      tmpxft_00004440_00000000-7_UpSampleLinear1d.cudafe1.cpp
+
+      [20/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnarySpecialOpsKernel.cu.obj
+      UnarySpecialOpsKernel.cu
+
+      tmpxft_00008498_00000000-7_UnarySpecialOpsKernel.cudafe1.cpp
+
+      [21/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Sorting.cu.obj
+      Sorting.cu
+
+      tmpxft_000041bc_00000000-7_Sorting.cudafe1.cpp
+
+      [22/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleNearest1d.cu.obj
+      UpSampleNearest1d.cu
+
+      tmpxft_000082f8_00000000-7_UpSampleNearest1d.cudafe1.cpp
+
+      [23/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\ZetaKernel.cu.obj
+      ZetaKernel.cu
+
+      tmpxft_00008778_00000000-7_ZetaKernel.cudafe1.cpp
+
+      [24/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\airy_ai.cu.obj
+      airy_ai.cu
+
+      tmpxft_00008524_00000000-7_airy_ai.cudafe1.cpp
+
+      [25/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\bessel_j0.cu.obj
+      bessel_j0.cu
+
+      tmpxft_0000851c_00000000-7_bessel_j0.cudafe1.cpp
+
+      [26/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\bessel_y0.cu.obj
+      bessel_y0.cu
+
+      tmpxft_0000836c_00000000-7_bessel_y0.cudafe1.cpp
+
+      [27/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\bessel_j1.cu.obj
+      bessel_j1.cu
+      tmpxft_000087e4_00000000-7_bessel_j1.cudafe1.cpp
+      [28/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleTrilinear3d.cu.obj
+      UpSampleTrilinear3d.cu
+      tmpxft_00008598_00000000-7_UpSampleTrilinear3d.cudafe1.cpp
+      [29/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryLogKernels.cu.obj
+      UnaryLogKernels.cu
+      tmpxft_000080c4_00000000-7_UnaryLogKernels.cudafe1.cpp
+
+      [30/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleBilinear2d.cu.obj
+      UpSampleBilinear2d.cu
+
+      tmpxft_00008634_00000000-7_UpSampleBilinear2d.cudafe1.cpp
+
+      [31/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleNearest3d.cu.obj
+      UpSampleNearest3d.cu
+
+      tmpxft_000085d8_00000000-7_UpSampleNearest3d.cudafe1.cpp
+
+      [32/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\WeightNorm.cu.obj
+      WeightNorm.cu
+
+      tmpxft_00008348_00000000-7_WeightNorm.cudafe1.cpp
+
+      [33/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UpSampleNearest2d.cu.obj
+      UpSampleNearest2d.cu
+
+      tmpxft_00008364_00000000-7_UpSampleNearest2d.cudafe1.cpp
+
+      [34/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UniqueCub.cu.obj
+      UniqueCub.cu
+
+      tmpxft_00008544_00000000-7_UniqueCub.cudafe1.cpp
+
+      [35/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\chebyshev_polynomial_t.cu.obj
+      chebyshev_polynomial_t.cu
+      tmpxft_0000821c_00000000-7_chebyshev_polynomial_t.cudafe1.cpp
+      [36/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryFractionKernels.cu.obj
+      UnaryFractionKernels.cu
+      tmpxft_0000812c_00000000-7_UnaryFractionKernels.cudafe1.cpp
+      [37/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\bessel_y1.cu.obj
+      bessel_y1.cu
+      tmpxft_00004878_00000000-7_bessel_y1.cudafe1.cpp
+
+      [38/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\chebyshev_polynomial_u.cu.obj
+      chebyshev_polynomial_u.cu
+
+      tmpxft_00008214_00000000-7_chebyshev_polynomial_u.cudafe1.cpp
+
+      [39/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\chebyshev_polynomial_v.cu.obj
+      chebyshev_polynomial_v.cu
+
+      tmpxft_000086b0_00000000-7_chebyshev_polynomial_v.cudafe1.cpp
+
+      [40/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\chebyshev_polynomial_w.cu.obj
+      chebyshev_polynomial_w.cu
+      tmpxft_00008650_00000000-7_chebyshev_polynomial_w.cudafe1.cpp
+      [41/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricAcosKernel.cu.obj
+      UnaryGeometricAcosKernel.cu
+      tmpxft_000081dc_00000000-7_UnaryGeometricAcosKernel.cudafe1.cpp
+      [42/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorTopK.cu.obj
+      TensorTopK.cu
+      tmpxft_00004244_00000000-7_TensorTopK.cudafe1.cpp
+
+      [43/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnarySignKernels.cu.obj
+      UnarySignKernels.cu
+
+      tmpxft_0000842c_00000000-7_UnarySignKernels.cudafe1.cpp
+
+      [44/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\hermite_polynomial_he.cu.obj
+      hermite_polynomial_he.cu
+
+      tmpxft_00007d2c_00000000-7_hermite_polynomial_he.cudafe1.cpp
+
+      [45/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\hermite_polynomial_h.cu.obj
+      hermite_polynomial_h.cu
+      tmpxft_00008514_00000000-7_hermite_polynomial_h.cudafe1.cpp
+      [46/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\fused_adam_impl.cu.obj
+      fused_adam_impl.cu
+      tmpxft_00007c88_00000000-7_fused_adam_impl.cudafe1.cpp
+      [47/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\laguerre_polynomial_l.cu.obj
+      laguerre_polynomial_l.cu
+      tmpxft_0000832c_00000000-7_laguerre_polynomial_l.cudafe1.cpp
+
+      [48/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\legendre_polynomial_p.cu.obj
+      legendre_polynomial_p.cu
+
+      tmpxft_00008078_00000000-7_legendre_polynomial_p.cudafe1.cpp
+
+      [49/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\fused_adam_amsgrad_impl.cu.obj
+      fused_adam_amsgrad_impl.cu
+
+      tmpxft_0000875c_00000000-7_fused_adam_amsgrad_impl.cudafe1.cpp
+
+      [50/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\fused_adamw_amsgrad_impl.cu.obj
+      fused_adamw_amsgrad_impl.cu
+      tmpxft_00003a80_00000000-7_fused_adamw_amsgrad_impl.cudafe1.cpp
+      [51/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\fused_adamw_impl.cu.obj
+      fused_adamw_impl.cu
+      tmpxft_000087dc_00000000-7_fused_adamw_impl.cudafe1.cpp
+      [52/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricAcoshKernel.cu.obj
+      UnaryGeometricAcoshKernel.cu
+      tmpxft_00008264_00000000-7_UnaryGeometricAcoshKernel.cudafe1.cpp
+
+      [53/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricAsinhKernel.cu.obj
+      UnaryGeometricAsinhKernel.cu
+
+      tmpxft_0000830c_00000000-7_UnaryGeometricAsinhKernel.cudafe1.cpp
+
+      [54/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\modified_bessel_i0.cu.obj
+      modified_bessel_i0.cu
+
+      tmpxft_00007ea8_00000000-7_modified_bessel_i0.cudafe1.cpp
+
+      [55/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\modified_bessel_i1.cu.obj
+      modified_bessel_i1.cu
+      tmpxft_000081ac_00000000-7_modified_bessel_i1.cudafe1.cpp
+      [56/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\modified_bessel_k1.cu.obj
+      modified_bessel_k1.cu
+      tmpxft_000083f0_00000000-7_modified_bessel_k1.cudafe1.cpp
+      [57/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\modified_bessel_k0.cu.obj
+      modified_bessel_k0.cu
+      tmpxft_00008540_00000000-7_modified_bessel_k0.cudafe1.cpp
+
+      [58/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\scaled_modified_bessel_k0.cu.obj
+      scaled_modified_bessel_k0.cu
+
+      tmpxft_00004b88_00000000-7_scaled_modified_bessel_k0.cudafe1.cpp
+
+      [59/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\scaled_modified_bessel_k1.cu.obj
+      scaled_modified_bessel_k1.cu
+
+      tmpxft_00007824_00000000-7_scaled_modified_bessel_k1.cudafe1.cpp
+
+      [60/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\StepKernel.cu.obj
+      StepKernel.cu
+      tmpxft_000040c4_00000000-7_StepKernel.cudafe1.cpp
+      [61/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_t.cu.obj
+      shifted_chebyshev_polynomial_t.cu
+      tmpxft_00002b24_00000000-7_shifted_chebyshev_polynomial_t.cudafe1.cpp
+      [62/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryGeometricAsinKernel.cu.obj
+      UnaryGeometricAsinKernel.cu
+      tmpxft_000082bc_00000000-7_UnaryGeometricAsinKernel.cudafe1.cpp
+      [63/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_u.cu.obj
+      shifted_chebyshev_polynomial_u.cu
+      tmpxft_00008260_00000000-7_shifted_chebyshev_polynomial_u.cudafe1.cpp
+      [64/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_v.cu.obj
+      shifted_chebyshev_polynomial_v.cu
+      tmpxft_00008238_00000000-7_shifted_chebyshev_polynomial_v.cudafe1.cpp
+
+      [65/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_w.cu.obj
+      shifted_chebyshev_polynomial_w.cu
+
+      tmpxft_000023b8_00000000-7_shifted_chebyshev_polynomial_w.cudafe1.cpp
+
+      [66/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\spherical_bessel_j0.cu.obj
+      spherical_bessel_j0.cu
+
+      tmpxft_0000835c_00000000-7_spherical_bessel_j0.cudafe1.cpp
+
+      [67/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\int4mm.cu.obj
+      int4mm.cu
+      tmpxft_00005fb0_00000000-7_int4mm.cudafe1.cpp
+      [68/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\layer_norm_kernel.cu.obj
+      layer_norm_kernel.cu
+      tmpxft_00007e90_00000000-7_layer_norm_kernel.cudafe1.cpp
+      [69/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\UnaryOpsKernel.cu.obj
+      UnaryOpsKernel.cu
+      tmpxft_000080d8_00000000-7_UnaryOpsKernel.cudafe1.cpp
+
+      [70/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorCompare.cu.obj
+      TensorCompare.cu
+
+      tmpxft_00007d40_00000000-7_TensorCompare.cudafe1.cpp
+
+      [71/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\FusedObsFakeQuant.cu.obj
+      FusedObsFakeQuant.cu
+
+      tmpxft_00004600_00000000-7_FusedObsFakeQuant.cudafe1.cpp
+
+      [72/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\SparseBinaryOpIntersectionKernel.cu.obj
+      SparseBinaryOpIntersectionKernel.cu
+      tmpxft_00007f58_00000000-7_SparseBinaryOpIntersectionKernel.cudafe1.cpp
+      [73/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\EmbeddingBag.cu.obj
+      EmbeddingBag.cu
+      tmpxft_000082cc_00000000-7_EmbeddingBag.cudafe1.cpp
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(82): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(82): note: the template instantiation context (the oldest one first) is
+      pytorch\aten\src\ATen/core/function_schema.h(438): note: see reference to function template instantiation 'std::optional<int>::optional<const I,0>(_Ty2 &&) noexcept' being compiled
+              with
+              [
+                  I=size_t,
+                  _Ty2=size_t
+              ]
+      pytorch\aten\src\ATen/core/function_schema.h(438): note: see the first reference to 'std::optional<int>::optional' in 'c10::FunctionSchema::argumentIndexWithName'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(272): note: see reference to function template instantiation 'std::_Optional_construct_base<_Ty>::_Optional_construct_base<const unsigned __int64>(std::in_place_t,const unsigned __int64 &&)' being compiled
+              with
+              [
+                  _Ty=int
+              ]
+      tmpxft_000082cc_00000000-7_EmbeddingBag.cudafe1.stub.c(2): note: see reference to function template instantiation 'std::_Optional_destruct_base<_Ty,true>::_Optional_destruct_base<const unsigned __int64>(std::in_place_t,const unsigned __int64 &&) noexcept' being compiled
+              with
+              [
+                  _Ty=int
+              ]
+      [74/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\ValidateCompressedIndicesKernel.cu.obj
+      ValidateCompressedIndicesKernel.cu
+      tmpxft_0000841c_00000000-7_ValidateCompressedIndicesKernel.cudafe1.cpp
+
+      [75/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\MakePerTensorQuantizedTensor.cu.obj
+      MakePerTensorQuantizedTensor.cu
+
+      tmpxft_000083e8_00000000-7_MakePerTensorQuantizedTensor.cudafe1.cpp
+
+      [76/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\IntReprQuant.cu.obj
+      IntReprQuant.cu
+
+      tmpxft_00007084_00000000-7_IntReprQuant.cudafe1.cpp
+
+      [77/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseSemiSturcturedApply.cu.obj
+      SparseSemiSturcturedApply.cu
+      tmpxft_00004628_00000000-7_SparseSemiSturcturedApply.cudafe1.cpp
+      [78/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\nested\cuda\NestedTensorBinaryOps.cu.obj
+      NestedTensorBinaryOps.cu
+      tmpxft_000081c8_00000000-7_NestedTensorBinaryOps.cudafe1.cpp
+      [79/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\nested\cuda\NestedTensorMatmul.cu.obj
+      NestedTensorMatmul.cu
+
+      tmpxft_00007ee4_00000000-7_NestedTensorMatmul.cudafe1.cpp
+
+      [80/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseSemiStructuredOps.cu.obj
+      SparseSemiStructuredOps.cu
+
+      tmpxft_00008734_00000000-7_SparseSemiStructuredOps.cudafe1.cpp
+
+      [81/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseMatMul.cu.obj
+      SparseMatMul.cu
+
+      tmpxft_00007ebc_00000000-7_SparseMatMul.cudafe1.cpp
+
+      [82/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseSemiStructuredLinear.cu.obj
+      SparseSemiStructuredLinear.cu
+      tmpxft_000087ec_00000000-7_SparseSemiStructuredLinear.cudafe1.cpp
+      [83/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseSemiStructuredApplyDense.cu.obj
+      SparseSemiStructuredApplyDense.cu
+      tmpxft_000077e8_00000000-7_SparseSemiStructuredApplyDense.cudafe1.cpp
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(82): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(82): note: the template instantiation context (the oldest one first) is
+      pytorch\aten\src\ATen/core/function_schema.h(438): note: see reference to function template instantiation 'std::optional<int>::optional<const I,0>(_Ty2 &&) noexcept' being compiled
+              with
+              [
+                  I=size_t,
+                  _Ty2=size_t
+              ]
+      pytorch\aten\src\ATen/core/function_schema.h(438): note: see the first reference to 'std::optional<int>::optional' in 'c10::FunctionSchema::argumentIndexWithName'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(272): note: see reference to function template instantiation 'std::_Optional_construct_base<_Ty>::_Optional_construct_base<const unsigned __int64>(std::in_place_t,const unsigned __int64 &&)' being compiled
+
+              with
+
+              [
+
+                  _Ty=int
+
+              ]
+
+      tmpxft_000077e8_00000000-7_SparseSemiStructuredApplyDense.cudafe1.stub.c(2): note: see reference to function template instantiation 'std::_Optional_destruct_base<_Ty,true>::_Optional_destruct_base<const unsigned __int64>(std::in_place_t,const unsigned __int64 &&) noexcept' being compiled
+
+              with
+
+              [
+
+                  _Ty=int
+
+              ]
+
+      [84/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseSemiStructuredTile.cu.obj
+      SparseSemiStructuredTile.cu
+      tmpxft_00007df4_00000000-7_SparseSemiStructuredTile.cudafe1.cpp
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(82): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(82): note: the template instantiation context (the oldest one first) is
+      pytorch\aten\src\ATen/core/function_schema.h(438): note: see reference to function template instantiation 'std::optional<int>::optional<const I,0>(_Ty2 &&) noexcept' being compiled
+              with
+              [
+                  I=size_t,
+                  _Ty2=size_t
+              ]
+      pytorch\aten\src\ATen/core/function_schema.h(438): note: see the first reference to 'std::optional<int>::optional' in 'c10::FunctionSchema::argumentIndexWithName'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\optional(272): note: see reference to function template instantiation 'std::_Optional_construct_base<_Ty>::_Optional_construct_base<const unsigned __int64>(std::in_place_t,const unsigned __int64 &&)' being compiled
+              with
+              [
+                  _Ty=int
+              ]
+      tmpxft_00007df4_00000000-7_SparseSemiStructuredTile.cudafe1.stub.c(2): note: see reference to function template instantiation 'std::_Optional_destruct_base<_Ty,true>::_Optional_destruct_base<const unsigned __int64>(std::in_place_t,const unsigned __int64 &&) noexcept' being compiled
+              with
+              [
+                  _Ty=int
+              ]
+      [85/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\Activation.cu.obj
+      Activation.cu
+      tmpxft_00002f10_00000000-7_Activation.cudafe1.cpp
+      [86/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseCUDATensorMath.cu.obj
+      SparseCUDATensorMath.cu
+      tmpxft_00008634_00000000-7_SparseCUDATensorMath.cudafe1.cpp
+
+      [87/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\attention.cu.obj
+      attention.cu
+
+      tmpxft_00008700_00000000-7_attention.cudafe1.cpp
+
+      [88/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseCUDATensor.cu.obj
+      SparseCUDATensor.cu
+
+      tmpxft_0000836c_00000000-7_SparseCUDATensor.cudafe1.cpp
+
+      [89/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k128_dropout.cu.obj
+      cutlassB_bf16_aligned_k128_dropout.cu
+
+      tmpxft_00008414_00000000-7_cutlassB_bf16_aligned_k128_dropout.cudafe1.cpp
+
+      [90/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k32_dropout.cu.obj
+      cutlassB_bf16_aligned_k32_dropout.cu
+
+      tmpxft_000085ec_00000000-7_cutlassB_bf16_aligned_k32_dropout.cudafe1.cpp
+
+      [91/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\nested\cuda\NestedTensorTransformerFunctions.cu.obj
+      NestedTensorTransformerFunctions.cu
+
+      tmpxft_00008354_00000000-7_NestedTensorTransformerFunctions.cudafe1.cpp
+
+      [92/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\attention_backward.cu.obj
+      attention_backward.cu
+
+      tmpxft_00002cec_00000000-7_attention_backward.cudafe1.cpp
+
+      [93/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\AffineQuantizer.cu.obj
+      AffineQuantizer.cu
+      tmpxft_0000610c_00000000-7_AffineQuantizer.cudafe1.cpp
+      [94/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SoftMax.cu.obj
+      SoftMax.cu
+      tmpxft_000073e0_00000000-7_SoftMax.cudafe1.cpp
+      [95/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k128.cu.obj
+      cutlassB_f16_notaligned_k128.cu
+      tmpxft_0000843c_00000000-7_cutlassB_f16_notaligned_k128.cudafe1.cpp
+      [96/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k32_dropout.cu.obj
+      cutlassB_f16_notaligned_k32_dropout.cu
+      tmpxft_0000819c_00000000-7_cutlassB_f16_notaligned_k32_dropout.cudafe1.cpp
+      [97/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k32.cu.obj
+      cutlassB_f16_notaligned_k32.cu
+      tmpxft_00003778_00000000-7_cutlassB_f16_notaligned_k32.cudafe1.cpp
+
+      [98/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k128_dropout.cu.obj
+      cutlassB_f16_notaligned_k128_dropout.cu
+
+      tmpxft_00007e0c_00000000-7_cutlassB_f16_notaligned_k128_dropout.cudafe1.cpp
+
+      [99/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k32.cu.obj
+      cutlassB_bf16_aligned_k32.cu
+
+      tmpxft_00007d88_00000000-7_cutlassB_bf16_aligned_k32.cudafe1.cpp
+
+      [100/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k64.cu.obj
+      cutlassB_f16_notaligned_k64.cu
+
+      tmpxft_00003158_00000000-7_cutlassB_f16_notaligned_k64.cudafe1.cpp
+
+      [101/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k64_dropout.cu.obj
+      cutlassB_f16_notaligned_k64_dropout.cu
+
+      tmpxft_00007554_00000000-7_cutlassB_f16_notaligned_k64_dropout.cudafe1.cpp
+
+      [102/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k64_dropout.cu.obj
+      cutlassB_bf16_aligned_k64_dropout.cu
+
+      tmpxft_0000802c_00000000-7_cutlassB_bf16_aligned_k64_dropout.cudafe1.cpp
+
+      [103/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k65536.cu.obj
+      cutlassB_f16_notaligned_k65536.cu
+
+      tmpxft_0000821c_00000000-7_cutlassB_f16_notaligned_k65536.cudafe1.cpp
+
+      [104/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k65536_dropout.cu.obj
+      cutlassB_f16_notaligned_k65536_dropout.cu
+
+      tmpxft_00007e3c_00000000-7_cutlassB_f16_notaligned_k65536_dropout.cudafe1.cpp
+
+      [105/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k128.cu.obj
+      cutlassB_bf16_aligned_k128.cu
+      tmpxft_00002290_00000000-7_cutlassB_bf16_aligned_k128.cudafe1.cpp
+      [106/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k65536.cu.obj
+      cutlassB_bf16_aligned_k65536.cu
+      tmpxft_00008340_00000000-7_cutlassB_bf16_aligned_k65536.cudafe1.cpp
+      [107/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k96.cu.obj
+      cutlassB_bf16_aligned_k96.cu
+      tmpxft_00002824_00000000-7_cutlassB_bf16_aligned_k96.cudafe1.cpp
+      [108/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k64_dropout.cu.obj
+      cutlassB_f16_aligned_k64_dropout.cu
+      tmpxft_00007fa0_00000000-7_cutlassB_f16_aligned_k64_dropout.cudafe1.cpp
+      [109/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k64.cu.obj
+      cutlassB_bf16_aligned_k64.cu
+      tmpxft_00000a64_00000000-7_cutlassB_bf16_aligned_k64.cudafe1.cpp
+      [110/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k65536_dropout.cu.obj
+      cutlassB_bf16_aligned_k65536_dropout.cu
+
+      tmpxft_000080ac_00000000-7_cutlassB_bf16_aligned_k65536_dropout.cudafe1.cpp
+
+      [111/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k32_dropout.cu.obj
+      cutlassB_f16_aligned_k32_dropout.cu
+
+      tmpxft_00008218_00000000-7_cutlassB_f16_aligned_k32_dropout.cudafe1.cpp
+
+      [112/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k96.cu.obj
+      cutlassB_f16_aligned_k96.cu
+
+      tmpxft_00008728_00000000-7_cutlassB_f16_aligned_k96.cudafe1.cpp
+
+      [113/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k65536.cu.obj
+      cutlassB_f16_aligned_k65536.cu
+
+      tmpxft_00007fac_00000000-7_cutlassB_f16_aligned_k65536.cudafe1.cpp
+
+      [114/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k32.cu.obj
+      cutlassB_f16_aligned_k32.cu
+
+      tmpxft_0000877c_00000000-7_cutlassB_f16_aligned_k32.cudafe1.cpp
+
+      [115/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k128_dropout.cu.obj
+      cutlassB_f16_aligned_k128_dropout.cu
+
+      tmpxft_000082c4_00000000-7_cutlassB_f16_aligned_k128_dropout.cudafe1.cpp
+
+      [116/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k128_dropout.cu.obj
+      cutlassB_f32_notaligned_k128_dropout.cu
+
+      tmpxft_00007ef8_00000000-7_cutlassB_f32_notaligned_k128_dropout.cudafe1.cpp
+
+      [117/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k128.cu.obj
+      cutlassB_f32_notaligned_k128.cu
+
+      tmpxft_0000819c_00000000-7_cutlassB_f32_notaligned_k128.cudafe1.cpp
+
+      [118/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k32.cu.obj
+      cutlassB_f32_notaligned_k32.cu
+
+      tmpxft_00002f10_00000000-7_cutlassB_f32_notaligned_k32.cudafe1.cpp
+
+      [119/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k64.cu.obj
+      cutlassB_f32_notaligned_k64.cu
+
+      tmpxft_00008894_00000000-7_cutlassB_f32_notaligned_k64.cudafe1.cpp
+
+      [120/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k64_dropout.cu.obj
+      cutlassB_f32_notaligned_k64_dropout.cu
+      tmpxft_00008a2c_00000000-7_cutlassB_f32_notaligned_k64_dropout.cudafe1.cpp
+      [121/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k32_dropout.cu.obj
+      cutlassB_f32_notaligned_k32_dropout.cu
+      tmpxft_0000883c_00000000-7_cutlassB_f32_notaligned_k32_dropout.cudafe1.cpp
+
+      [122/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\RegisterQuantizedCUDA_0.cpp.obj
+      [123/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k64.cu.obj
+      cutlassB_f16_aligned_k64.cu
+
+      tmpxft_000087dc_00000000-7_cutlassB_f16_aligned_k64.cudafe1.cpp
+
+      [124/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k65536.cu.obj
+      cutlassB_f32_notaligned_k65536.cu
+
+      tmpxft_00008454_00000000-7_cutlassB_f32_notaligned_k65536.cudafe1.cpp
+
+      [125/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k65536_dropout.cu.obj
+      cutlassB_f16_aligned_k65536_dropout.cu
+
+      tmpxft_000050b4_00000000-7_cutlassB_f16_aligned_k65536_dropout.cudafe1.cpp
+
+      [126/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\linalg\BatchLinearAlgebraLib.cpp.obj
+      [127/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\RegisterNestedTensorCUDA_0.cpp.obj
+      [128/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\linalg\BatchLinearAlgebra.cpp.obj
+      [129/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\linalg\CusolverDnHandlePool.cpp.obj
+      [130/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k65536_dropout.cu.obj
+      cutlassB_f32_notaligned_k65536_dropout.cu
+
+      tmpxft_00008244_00000000-7_cutlassB_f32_notaligned_k65536_dropout.cudafe1.cpp
+
+      [131/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\cuda\CUDASparseBlas.cpp.obj
+      [132/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\linalg\CudssHandlePool.cpp.obj
+      [133/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\RegisterSparseCsrCUDA_0.cpp.obj
+      [134/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k32.cu.obj
+      cutlassB_f32_aligned_k32.cu
+
+      tmpxft_00002088_00000000-7_cutlassB_f32_aligned_k32.cudafe1.cpp
+
+      [135/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\RegisterSparseCUDA_0.cpp.obj
+      [136/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\cuda\CublasHandlePool.cpp.obj
+      [137/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\cuda\tunable\Tunable.cpp.obj
+      [138/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f16_notaligned.cu.obj
+      cutlassF_f16_notaligned.cu
+
+      tmpxft_0000840c_00000000-7_cutlassF_f16_notaligned.cudafe1.cpp
+
+      [139/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\cuda\tunable\StreamTimer.cpp.obj
+      [140/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\linalg\BatchLinearAlgebraLibBlas.cpp.obj
+      [141/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\linalg\CUDASolver.cpp.obj
+      [142/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k64.cu.obj
+      cutlassB_f32_aligned_k64.cu
+
+      tmpxft_000056fc_00000000-7_cutlassB_f32_aligned_k64.cudafe1.cpp
+
+      [143/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Activation.cpp.obj
+      [144/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Distributions.cpp.obj
+      [145/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k64_dropout.cu.obj
+      cutlassB_f32_aligned_k64_dropout.cu
+
+      tmpxft_000077b4_00000000-7_cutlassB_f32_aligned_k64_dropout.cudafe1.cpp
+
+      [146/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f32_notaligned.cu.obj
+      cutlassF_f32_notaligned.cu
+
+      tmpxft_00008b1c_00000000-7_cutlassF_f32_notaligned.cudafe1.cpp
+
+      [147/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Equal.cpp.obj
+      [148/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k32_dropout.cu.obj
+      cutlassB_f32_aligned_k32_dropout.cu
+
+      tmpxft_00007b80_00000000-7_cutlassB_f32_aligned_k32_dropout.cudafe1.cpp
+
+      [149/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\IndexKernel.cpp.obj
+      [150/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\flash_attn\flash_api.cpp.obj
+      [151/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\ScanKernels.cpp.obj
+      [152/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\ReduceOps.cpp.obj
+      [153/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Sorting.cpp.obj
+      [154/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Sort.cpp.obj
+      [155/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\GridSampler.cpp.obj
+      [156/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorShapeCUDA.cpp.obj
+      [157/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\LinearAlgebraStubs.cpp.obj
+      [158/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\CudaIPCTypes.cpp.obj
+      [159/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorModeKernel.cpp.obj
+      [160/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseCUDABlas.cpp.obj
+      [161/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\jit_utils.cpp.obj
+      [162/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorTopK.cpp.obj
+      [163/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseBlas.cpp.obj
+      [164/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Blas.cpp.obj
+      [165/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\cuda\CUDAPluggableAllocator.cpp.obj
+      [166/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k128.cu.obj
+      cutlassB_f32_aligned_k128.cu
+      tmpxft_00004108_00000000-7_cutlassB_f32_aligned_k128.cudafe1.cpp
+      [167/730] Linking C shared library bin\torch_global_deps.dll
+      [168/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f16_aligned.cu.obj
+      cutlassF_f16_aligned.cu
+      tmpxft_000079ec_00000000-7_cutlassF_f16_aligned.cudafe1.cpp
+
+      [169/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_bf16_aligned.cu.obj
+      cutlassF_bf16_aligned.cu
+
+      tmpxft_00008824_00000000-7_cutlassF_bf16_aligned.cudafe1.cpp
+
+      [170/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\inductor\aoti_torch\shim_cuda.cpp.obj
+      [171/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseBlasLegacy.cpp.obj
+      [172/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseBlasImpl.cpp.obj
+      [173/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\inductor\aoti_runner\model_container_runner_cuda.cpp.obj
+      [174/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\cuda\memory_snapshot.cpp.obj
+      [175/730] Building CXX object caffe2\CMakeFiles\Dimname_test.dir\__\aten\src\ATen\test\Dimname_test.cpp.obj
+      [176/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\profiler\stubs\cuda.cpp.obj
+      [177/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\cuda\CUDABlas.cpp.obj
+      [178/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f32_aligned.cu.obj
+      cutlassF_f32_aligned.cu
+
+      tmpxft_0000834c_00000000-7_cutlassF_f32_aligned.cudafe1.cpp
+
+      [179/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k128.cu.obj
+      cutlassB_f16_aligned_k128.cu
+
+      tmpxft_00008684_00000000-7_cutlassB_f16_aligned_k128.cudafe1.cpp
+
+      [180/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\cuda\comm.cpp.obj
+      [181/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\jit\passes\frozen_conv_add_relu_fusion_cuda.cpp.obj
+      [182/730] Building CXX object caffe2\CMakeFiles\atest.dir\__\aten\src\ATen\test\atest.cpp.obj
+      [183/730] Building CXX object caffe2\CMakeFiles\NamedTensor_test.dir\__\aten\src\ATen\test\NamedTensor_test.cpp.obj
+      [184/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k65536.cu.obj
+      cutlassB_f32_aligned_k65536.cu
+
+      tmpxft_00008320_00000000-7_cutlassB_f32_aligned_k65536.cudafe1.cpp
+
+      [185/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k65536_dropout.cu.obj
+      cutlassB_f32_aligned_k65536_dropout.cu
+      tmpxft_000071cc_00000000-7_cutlassB_f32_aligned_k65536_dropout.cudafe1.cpp
+      [186/730] Building CXX object caffe2\CMakeFiles\cpu_profiling_allocator_test.dir\__\aten\src\ATen\test\cpu_profiling_allocator_test.cpp.obj
+      [187/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k128_dropout.cu.obj
+      cutlassB_f32_aligned_k128_dropout.cu
+      tmpxft_00008414_00000000-7_cutlassB_f32_aligned_k128_dropout.cudafe1.cpp
+
+      [188/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\jit\runtime\register_cuda_ops.cpp.obj
+      [189/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\group_norm_kernel.cu.obj
+      group_norm_kernel.cu
+
+      tmpxft_00000f24_00000000-7_group_norm_kernel.cudafe1.cpp
+
+      [190/730] Building CXX object caffe2\CMakeFiles\extension_backend_test.dir\__\aten\src\ATen\test\extension_backend_test.cpp.obj
+      [191/730] Building CXX object caffe2\CMakeFiles\lazy_tensor_test.dir\__\aten\src\ATen\test\lazy_tensor_test.cpp.obj
+      [192/730] Building CXX object caffe2\CMakeFiles\memory_format_test.dir\__\aten\src\ATen\test\memory_format_test.cpp.obj
+      [193/730] Building CXX object caffe2\CMakeFiles\operator_name_test.dir\__\aten\src\ATen\test\operator_name_test.cpp.obj
+      [194/730] Building CXX object caffe2\CMakeFiles\broadcast_test.dir\__\aten\src\ATen\test\broadcast_test.cpp.obj
+      [195/730] Building CXX object caffe2\CMakeFiles\apply_utils_test.dir\__\aten\src\ATen\test\apply_utils_test.cpp.obj
+      [196/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\nested\cuda\NestedTensorTransformerFunctions.cpp.obj
+      [197/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\TensorModeKernel.cu.obj
+      TensorModeKernel.cu
+
+      tmpxft_00007eac_00000000-7_TensorModeKernel.cudafe1.cpp
+
+      [198/730] Building CXX object caffe2\CMakeFiles\Dict_test.dir\__\aten\src\ATen\test\Dict_test.cpp.obj
+      [199/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\autograd\functions\comm.cpp.obj
+      [200/730] Building CXX object caffe2\CMakeFiles\MaybeOwned_test.dir\__\aten\src\ATen\test\MaybeOwned_test.cpp.obj
+      [201/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\RegisterCUDA_0.cpp.obj
+      [202/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\jit\tensorexpr\cuda_codegen.cpp.obj
+      pytorch\torch/csrc/jit/tensorexpr/ir.h(395): warning C4805: '==': unsafe mix of type 'c10::impl::ScalarTypeToCPPType<c10::ScalarType::Bool>::type' and type 'T' in operation
+              with
+              [
+                  T=int
+              ]
+      pytorch\torch/csrc/jit/tensorexpr/ir.h(395): note: the template instantiation context (the oldest one first) is
+      pytorch\torch\csrc\jit\tensorexpr\cuda_codegen.cpp(147): note: see reference to function template instantiation 'bool torch::jit::tensorexpr::immediateEquals<int>(const torch::jit::tensorexpr::ExprPtr &,T)' being compiled
+              with
+              [
+                  T=int
+              ]
+      [203/730] Building CXX object caffe2\CMakeFiles\cpu_allocator_test.dir\__\aten\src\ATen\test\cpu_allocator_test.cpp.obj
+      [204/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\quantized\cuda\FakeQuantizeCore.cu.obj
+      FakeQuantizeCore.cu
+
+      tmpxft_0000800c_00000000-7_FakeQuantizeCore.cudafe1.cpp
+
+      [205/730] Building CXX object caffe2\CMakeFiles\torch_cuda.dir\__\torch\csrc\jit\codegen\fuser\cuda\fused_kernel.cpp.obj
+      [206/730] Building CXX object caffe2\CMakeFiles\memory_overlapping_test.dir\__\aten\src\ATen\test\memory_overlapping_test.cpp.obj
+      [207/730] Building CXX object caffe2\CMakeFiles\cpu_generator_test.dir\__\aten\src\ATen\test\cpu_generator_test.cpp.obj
+      [208/730] Building CXX object caffe2\CMakeFiles\dlconvertor_test.dir\__\aten\src\ATen\test\dlconvertor_test.cpp.obj
+      [209/730] Building CXX object caffe2\CMakeFiles\vec_test_all_types_DEFAULT.dir\__\aten\src\ATen\test\vec_test_all_types.cpp.obj
+      [210/730] Building CXX object caffe2\CMakeFiles\basic.dir\__\aten\src\ATen\test\basic.cpp.obj
+      [211/730] Building CXX object caffe2\CMakeFiles\half_test.dir\__\aten\src\ATen\test\half_test.cpp.obj
+      [212/730] Building CXX object caffe2\CMakeFiles\math_kernel_test.dir\__\aten\src\ATen\test\math_kernel_test.cpp.obj
+      [213/730] Building CXX object caffe2\CMakeFiles\type_ptr_test.dir\__\aten\src\ATen\test\type_ptr_test.cpp.obj
+      [214/730] Building CXX object caffe2\CMakeFiles\packedtensoraccessor_test.dir\__\aten\src\ATen\test\packedtensoraccessor_test.cpp.obj
+      [215/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\sparse\cuda\SparseCsrTensorMath.cu.obj
+      SparseCsrTensorMath.cu
+
+      tmpxft_00006750_00000000-7_SparseCsrTensorMath.cudafe1.cpp
+
+      [216/730] Building CXX object caffe2\CMakeFiles\quantized_test.dir\__\aten\src\ATen\test\quantized_test.cpp.obj
+      [217/730] Building CXX object caffe2\CMakeFiles\reportMemoryUsage_test.dir\__\aten\src\ATen\test\reportMemoryUsage_test.cpp.obj
+      [218/730] Building CXX object caffe2\CMakeFiles\operators_test.dir\__\aten\src\ATen\test\operators_test.cpp.obj
+      [219/730] Building CXX object caffe2\CMakeFiles\scalar_test.dir\__\aten\src\ATen\test\scalar_test.cpp.obj
+      [220/730] Building CXX object caffe2\CMakeFiles\StorageUtils_test.dir\__\aten\src\ATen\test\StorageUtils_test.cpp.obj
+      [221/730] Building CXX object caffe2\CMakeFiles\native_test.dir\__\aten\src\ATen\test\native_test.cpp.obj
+      [222/730] Building CXX object caffe2\CMakeFiles\stride_properties_test.dir\__\aten\src\ATen\test\stride_properties_test.cpp.obj
+      [223/730] Building CXX object caffe2\CMakeFiles\List_test.dir\__\aten\src\ATen\core\List_test.cpp.obj
+      [224/730] Building CXX object caffe2\CMakeFiles\CppSignature_test.dir\__\aten\src\ATen\core\dispatch\CppSignature_test.cpp.obj
+      [225/730] Building CXX object caffe2\CMakeFiles\test_parallel.dir\__\aten\src\ATen\test\test_parallel.cpp.obj
+      [226/730] Building CXX object caffe2\CMakeFiles\op_allowlist_test.dir\__\aten\src\ATen\core\op_registration\op_allowlist_test.cpp.obj
+      [227/730] Building CXX object caffe2\CMakeFiles\verify_api_visibility.dir\__\aten\src\ATen\test\verify_api_visibility.cpp.obj
+      [228/730] Linking CXX shared library bin\torch_cpu.dll
+      FAILED: bin/torch_cpu.dll lib/torch_cpu.lib
+      C:\Windows\system32\cmd.exe /C "cd . && venv\Lib\site-packages\cmake\data\bin\cmake.exe -E vs_link_dll --msvc-ver=1944 --intdir=caffe2\CMakeFiles\torch_cpu.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\mt.exe --manifests  -- C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\torch_cpu.rsp  /out:bin\torch_cpu.dll /implib:lib\torch_cpu.lib /pdb:bin\torch_cpu.pdb /dll /version:0.0 /machine:x64 /ignore:4049 /ignore:4217 /ignore:4099 /INCREMENTAL:NO && cd ."
+      LINK: command "C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\torch_cpu.rsp /out:bin\torch_cpu.dll /implib:lib\torch_cpu.lib /pdb:bin\torch_cpu.pdb /dll /version:0.0 /machine:x64 /ignore:4049 /ignore:4217 /ignore:4099 /INCREMENTAL:NO /MANIFEST:EMBED,ID=2" failed (exit code 1120) with the following output:
+         Creating library lib\torch_cpu.lib and object lib\torch_cpu.exp
+      PrimKernelRegistry.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      LayoutManager.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      HigherOrderKernel.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      ParallelGraphExecutor.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      CallTorchBindKernel.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      KernelFactory.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      OpKernel.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      SerialGraphExecutor.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      C10Kernel.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      AutoFunctionalizeKernel.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      ExecutionFrame.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      Executor.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      GraphExecutorBase.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+      ConstantFolder.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl c10d::Work::Work(int,enum c10d::OpType,char const *,class std::optional<class std::vector<class at::Tensor,class std::allocator<class at::Tensor> > > const &)" (??0Work@c10d@@QEAA@HW4OpType@1@PEBDAEBV?$optional@V?$vector@VTensor@at@@V?$allocator@VTensor@at@@@std@@@std@@@std@@@Z)
+
+      bin\torch_cpu.dll : fatal error LNK1120: 1 unresolved externals
+
+      [229/730] Building CXX object caffe2\CMakeFiles\undefined_tensor_test.dir\__\aten\src\ATen\test\undefined_tensor_test.cpp.obj
+      [230/730] Building CXX object caffe2\CMakeFiles\kernel_function_test.dir\__\aten\src\ATen\core\boxing\impl\kernel_function_test.cpp.obj
+      [231/730] Building CXX object caffe2\CMakeFiles\cuda_apply_test.dir\__\aten\src\ATen\test\cuda_apply_test.cpp.obj
+      [232/730] Building CXX object caffe2\CMakeFiles\weakref_test.dir\__\aten\src\ATen\test\weakref_test.cpp.obj
+      [233/730] Building CXX object caffe2\CMakeFiles\IListRef_test.dir\__\aten\src\ATen\core\IListRef_test.cpp.obj
+      [234/730] Building CXX object caffe2\CMakeFiles\kernel_lambda_test.dir\__\aten\src\ATen\core\boxing\impl\kernel_lambda_test.cpp.obj
+      [235/730] Building CXX object caffe2\CMakeFiles\kernel_function_legacy_test.dir\__\aten\src\ATen\core\boxing\impl\kernel_function_legacy_test.cpp.obj
+      [236/730] Building CXX object caffe2\CMakeFiles\reduce_ops_test.dir\__\aten\src\ATen\test\reduce_ops_test.cpp.obj
+      [237/730] Building CXX object caffe2\CMakeFiles\scalar_tensor_test.dir\__\aten\src\ATen\test\scalar_tensor_test.cpp.obj
+      [238/730] Building CXX object caffe2\CMakeFiles\inline_container_test.dir\serialize\inline_container_test.cc.obj
+      [239/730] Building CXX object caffe2\CMakeFiles\kernel_stackbased_test.dir\__\aten\src\ATen\core\boxing\impl\kernel_stackbased_test.cpp.obj
+      [240/730] Building CXX object caffe2\CMakeFiles\thread_init_test.dir\__\aten\src\ATen\test\thread_init_test.cpp.obj
+      [241/730] Building CXX object caffe2\CMakeFiles\ivalue_test.dir\__\aten\src\ATen\test\ivalue_test.cpp.obj
+      [242/730] Building CXX object caffe2\CMakeFiles\wrapdim_test.dir\__\aten\src\ATen\test\wrapdim_test.cpp.obj
+      [243/730] Building CXX object caffe2\CMakeFiles\make_boxed_from_unboxed_functor_test.dir\__\aten\src\ATen\core\boxing\impl\make_boxed_from_unboxed_functor_test.cpp.obj
+      [244/730] Building CXX object caffe2\CMakeFiles\pow_test.dir\__\aten\src\ATen\test\pow_test.cpp.obj
+      [245/730] Building CXX object caffe2\CMakeFiles\xla_tensor_test.dir\__\aten\src\ATen\test\xla_tensor_test.cpp.obj
+      [246/730] Building CXX object caffe2\CMakeFiles\KernelFunction_test.dir\__\aten\src\ATen\core\boxing\KernelFunction_test.cpp.obj
+      [247/730] Building CXX object caffe2\CMakeFiles\legacy_vmap_test.dir\__\aten\src\ATen\test\legacy_vmap_test.cpp.obj
+      [248/730] Building CXX object caffe2\CMakeFiles\tensor_iterator_test.dir\__\aten\src\ATen\test\tensor_iterator_test.cpp.obj
+      [249/730] Building CXX object caffe2\CMakeFiles\backend_fallback_test.dir\__\aten\src\ATen\core\dispatch\backend_fallback_test.cpp.obj
+      [250/730] Building CXX object caffe2\CMakeFiles\vec_test_all_types_AVX2.dir\__\aten\src\ATen\test\vec_test_all_types.cpp.obj
+      pytorch\aten\src\ATen/cpu/vec/vec_half.h(17): warning C4556: value of intrinsic immediate argument '8' is out of range '0 - 7'
+      pytorch\aten\src\ATen/cpu/vec/vec256/vec256_16bit_float.h(121): warning C4556: value of intrinsic immediate argument '8' is out of range '0 - 7'
+      pytorch\aten\src\ATen/cpu/vec/vec256/vec256_16bit_float.h(126): warning C4556: value of intrinsic immediate argument '8' is out of range '0 - 7'
+      pytorch\aten\src\ATen/cpu/vec/vec256/vec256_16bit_float.h(128): warning C4556: value of intrinsic immediate argument '8' is out of range '0 - 7'
+      [251/730] Building CXX object caffe2\CMakeFiles\cuda_allocator_test.dir\__\aten\src\ATen\test\cuda_allocator_test.cpp.obj
+      [252/730] Building CXX object caffe2\CMakeFiles\mobile_memory_cleanup.dir\__\aten\src\ATen\test\mobile_memory_cleanup.cpp.obj
+      [253/730] Building CXX object caffe2\CMakeFiles\kernel_lambda_legacy_test.dir\__\aten\src\ATen\core\boxing\impl\kernel_lambda_legacy_test.cpp.obj
+      [254/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\UfuncCUDA_add.cu.obj
+      UfuncCUDA_add.cu
+      tmpxft_0000812c_00000000-7_UfuncCUDA_add.cudafe1.cpp
+
+      [255/730] Building CXX object caffe2\CMakeFiles\cuda_caching_host_allocator_test.dir\__\aten\src\ATen\test\cuda_caching_host_allocator_test.cpp.obj
+      [256/730] Building CUDA object caffe2\CMakeFiles\cuda_atomic_ops_test.dir\__\aten\src\ATen\test\cuda_atomic_ops_test.cu.obj
+      cuda_atomic_ops_test.cu
+
+      tmpxft_0000881c_00000000-7_cuda_atomic_ops_test.cudafe1.cpp
+
+      [257/730] Building CXX object caffe2\CMakeFiles\cpu_rng_test.dir\__\aten\src\ATen\test\cpu_rng_test.cpp.obj
+      [258/730] Building CXX object caffe2\CMakeFiles\type_test.dir\__\aten\src\ATen\test\type_test.cpp.obj
+      [259/730] Building CXX object caffe2\CMakeFiles\op_registration_test.dir\__\aten\src\ATen\core\op_registration\op_registration_test.cpp.obj
+      [260/730] Building CXX object caffe2\CMakeFiles\vec_test_all_types_AVX512.dir\__\aten\src\ATen\test\vec_test_all_types.cpp.obj
+      [261/730] Building CUDA object caffe2\CMakeFiles\torch_cuda.dir\__\aten\src\ATen\native\cuda\Unique.cu.obj
+      Unique.cu
+
+      tmpxft_00003c60_00000000-7_Unique.cudafe1.cpp
+
+      ninja: build stopped: subcommand failed.
+      -- Checkout nccl release tag: v2.27.5-1
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for torch
+Failed to build torch
+ERROR: Failed to build installable wheels for some pyproject.toml based projects (torch)
+
+=== Step 3: Installing compatible torchvision and torchaudio ===
+Looking in indexes: https://download.pytorch.org/whl/cu121
+Collecting torchvision
+  Using cached https://download.pytorch.org/whl/cu121/torchvision-0.20.1%2Bcu121-cp311-cp311-win_amd64.whl (6.1 MB)
+Collecting torchaudio
+  Using cached https://download.pytorch.org/whl/cu121/torchaudio-2.5.1%2Bcu121-cp311-cp311-win_amd64.whl (4.1 MB)
+Collecting numpy (from torchvision)
+  Downloading https://download.pytorch.org/whl/numpy-2.1.2-cp311-cp311-win_amd64.whl.metadata (59 kB)
+Collecting torch==2.5.1+cu121 (from torchvision)
+  Using cached https://download.pytorch.org/whl/cu121/torch-2.5.1%2Bcu121-cp311-cp311-win_amd64.whl (2449.4 MB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
+  Downloading https://download.pytorch.org/whl/pillow-11.0.0-cp311-cp311-win_amd64.whl.metadata (9.3 kB)
+Collecting filelock (from torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/filelock-3.13.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting typing-extensions>=4.8.0 (from torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting networkx (from torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/networkx-3.3-py3-none-any.whl.metadata (5.1 kB)
+Collecting jinja2 (from torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting fsspec (from torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/fsspec-2024.6.1-py3-none-any.whl.metadata (11 kB)
+Collecting sympy==1.13.1 (from torch==2.5.1+cu121->torchvision)
+  Using cached https://download.pytorch.org/whl/sympy-1.13.1-py3-none-any.whl (6.2 MB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ---------------------------------------- 536.2/536.2 kB 3.5 MB/s eta 0:00:00
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.5.1+cu121->torchvision)
+  Downloading https://download.pytorch.org/whl/MarkupSafe-2.1.5-cp311-cp311-win_amd64.whl (17 kB)
+Downloading https://download.pytorch.org/whl/pillow-11.0.0-cp311-cp311-win_amd64.whl (2.6 MB)
+   ---------------------------------------- 2.6/2.6 MB 29.5 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Downloading https://download.pytorch.org/whl/filelock-3.13.1-py3-none-any.whl (11 kB)
+Downloading https://download.pytorch.org/whl/fsspec-2024.6.1-py3-none-any.whl (177 kB)
+Downloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl (133 kB)
+Downloading https://download.pytorch.org/whl/networkx-3.3-py3-none-any.whl (1.7 MB)
+   ---------------------------------------- 1.7/1.7 MB 90.0 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/numpy-2.1.2-cp311-cp311-win_amd64.whl (12.9 MB)
+   ---------------------------------------- 12.9/12.9 MB 50.4 MB/s eta 0:00:00
+Installing collected packages: mpmath, typing-extensions, sympy, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
+  Attempting uninstall: mpmath
+    Found existing installation: mpmath 1.3.0
+    Uninstalling mpmath-1.3.0:
+      Successfully uninstalled mpmath-1.3.0
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.14.1
+    Uninstalling typing_extensions-4.14.1:
+      Successfully uninstalled typing_extensions-4.14.1
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.14.0
+    Uninstalling sympy-1.14.0:
+      Successfully uninstalled sympy-1.14.0
+  Attempting uninstall: pillow
+    Found existing installation: pillow 10.4.0
+    Uninstalling pillow-10.4.0:
+      Successfully uninstalled pillow-10.4.0
+   --------- ------------------------------  3/13 [pillow]  WARNING: Failed to remove contents in a temporary directory 'venv\Lib\site-packages\~il'.
+  You can safely remove it manually.
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.4
+    Uninstalling numpy-1.26.4:
+      Successfully uninstalled numpy-1.26.4
+   ------------ ---------------------------  4/13 [numpy]  WARNING: Failed to remove contents in a temporary directory 'venv\Lib\site-packages\~umpy.libs'.
+  You can safely remove it manually.
+   ------------ ---------------------------  4/13 [numpy]  WARNING: Failed to remove contents in a temporary directory 'venv\Lib\site-packages\~umpy'.
+  You can safely remove it manually.
+  Attempting uninstall: networkx
+    Found existing installation: networkx 3.5
+    Uninstalling networkx-3.5:
+      Successfully uninstalled networkx-3.5
+  Attempting uninstall: MarkupSafe
+    Found existing installation: MarkupSafe 2.1.5
+    Uninstalling MarkupSafe-2.1.5:
+      Successfully uninstalled MarkupSafe-2.1.5
+   ------------------ ---------------------  6/13 [MarkupSafe]  WARNING: Failed to remove contents in a temporary directory 'venv\Lib\site-packages\~arkupsafe'.
+  You can safely remove it manually.
+  Attempting uninstall: fsspec
+    Found existing installation: fsspec 2025.5.1
+    Uninstalling fsspec-2025.5.1:
+      Successfully uninstalled fsspec-2025.5.1
+  Attempting uninstall: filelock
+    Found existing installation: filelock 3.18.0
+    Uninstalling filelock-3.18.0:
+      Successfully uninstalled filelock-3.18.0
+  Attempting uninstall: jinja2
+    Found existing installation: Jinja2 3.1.6
+    Uninstalling Jinja2-3.1.6:
+      Successfully uninstalled Jinja2-3.1.6
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+accelerate 0.32.1 requires numpy<2.0.0,>=1.17, but you have numpy 2.1.2 which is incompatible.
+gradio 3.41.2 requires numpy~=1.0, but you have numpy 2.1.2 which is incompatible.
+gradio 3.41.2 requires pillow<11.0,>=8.0, but you have pillow 11.0.0 which is incompatible.
+onnxruntime 1.18.1 requires numpy<2.0,>=1.21.6, but you have numpy 2.1.2 which is incompatible.
+transformers 4.42.4 requires numpy<2.0,>=1.17, but you have numpy 2.1.2 which is incompatible.
+Successfully installed MarkupSafe-2.1.5 filelock-3.13.1 fsspec-2024.6.1 jinja2-3.1.4 mpmath-1.3.0 networkx-3.3 numpy-2.1.2 pillow-11.0.0 sympy-1.13.1 torch-2.5.1+cu121 torchaudio-2.5.1+cu121 torchvision-0.20.1+cu121 typing-extensions-4.12.2
+
+=== Step 4: Verification ===
+PyTorch version: 2.5.1+cu121
+CUDA available: True
+Testing RTX 5090...
+venv\Lib\site-packages\torch\cuda\__init__.py:235: UserWarning:
+NVIDIA GeForce RTX 5090 with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_61 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+GPU tensor created successfully: cuda:0
+
+Custom PyTorch installation complete!
+Press any key to continue . . .
