@@ -1,8 +1,12 @@
 @echo off
-REM Drag-and-drop log file onto this script.
-set AUTO_OPEN=1
-set N=2
 
+REM Whether to automatically open the output file or not
+set AUTO_OPEN=1
+
+REM The number of lines to include before and after the error to preserve context.
+set N=3
+
+REM Drag-and-drop log file onto this script.
 if "%~1"=="" (
     echo Drag and drop a log file onto this script.
     pause
@@ -41,7 +45,7 @@ set "ps_script=%temp%\filter_script.ps1"
 >> "%ps_script%" echo   $out += '========================='
 >> "%ps_script%" echo   for ($k = $rng[0]; $k -le $rng[1]; $k++) {
 >> "%ps_script%" echo     $star = if ($match_set.Contains($k)) { '*' } else { ' ' }
->> "%ps_script%" echo     $out += "^<^|{0}{1}^|^> {2}" -f ($k+1), $star, $lines[$k]
+>> "%ps_script%" echo     $out += "<|{0}{1}|> {2}" -f ($k+1), $star, $lines[$k]
 >> "%ps_script%" echo   }
 >> "%ps_script%" echo }
 >> "%ps_script%" echo $out += '========================='
