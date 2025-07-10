@@ -19,7 +19,7 @@ REM Create PowerShell script file to avoid escaping issues
 set "ps_script=%temp%\filter_script.ps1"
 
 > "%ps_script%" echo $lines = Get-Content -Path '%infile%'
->> "%ps_script%" echo $patterns = 'abort^|assert^|\bbad\b^| bad^|bad ^|but you have^|catastrophic^|caution^|conflict^|connection^|corrupt^|could not^|crash^|critical^|deadlock^|denied^|deprecated^|disk space^|dump^|error^|exception^|\bexit\b^|exit code^|fail^|fatal^|forbidden^|halted^|illegal^|incompatible^|invalid^|killed^|\blimit\b^| limit^|limit ^|malformed^|misconfigured^|missing^|mismatch^|not found^|not installed^|obsolete^|\boom\b^| oom^|overflow^|panic^|quota^|returned^|segfault^|stopped^|terminate^|throttle^|timeout^|traceback^|\bunable\b^|unavailable^|unauthorized^|undefined^|unexpected^|unrecognized^|unresolved^|unsupported^|unreachable^|violation^|warning'
+>> "%ps_script%" echo $patterns = 'abort^|assert^|\bbad\b^| bad^|bad ^|but you have^|catastrophic^|caution^|conflict^|connection^|corrupt^|could not^|crash^|critical^|deadlock^|denied^|deprecated^|disk space^|dump^|error^|exception^|\bexit\b^|exit code^|fail^|fatal^|forbidden^|halted^|illegal^|incompatible^|invalid^|killed^|\blimit\b^| limit^|limit ^|malformed^|misconfigured^|missing^|mismatch^|not found^|not installed^|obsolete^|\boom\b^| oom^|out of ^|overflow^|panic^|quota^|returned^|segfault^|stopped^|terminate^|throttle^|timeout^|traceback^|\bunable\b^|unavailable^|unauthorized^|undefined^|unexpected^|unrecognized^|unresolved^|unsupported^|unreachable^|violation^|warning'
 >> "%ps_script%" echo $pattern = [regex]"(?i)$patterns"
 >> "%ps_script%" echo $match_indexes = @()
 >> "%ps_script%" echo $count_lines = $lines.Count
